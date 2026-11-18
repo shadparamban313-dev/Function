@@ -88,64 +88,108 @@
 
 
 
-let balance = 10000;
-const MIN_BALANCE = 1000;
+// let balance = 10000;
+// const MIN_BALANCE = 1000;
 
-// 1. Check Balance
-function checkBalance() {
-    console.log("Current Balance: ₹" + balance);
+// // 1. Check Balance
+// function checkBalance() {
+//     console.log("Current Balance: ₹" + balance);
+// }
+
+// // 2. Deposit Money
+// function depositMoney(amount) {
+//     if (amount <= 0) {
+//         console.log("Invalid amount! Deposit must be greater than zero.");
+//     } else {
+//         balance += amount;
+//         console.log("₹" + amount + " deposited successfully.");
+//         checkBalance();
+//     }
+// }
+
+// // 3. Withdraw Money
+// function withdrawMoney(amount) {
+//     if (amount <= 0) {
+//         console.log("Invalid amount! Withdrawal must be greater than zero.");
+//     } else if (amount > balance) {
+//         console.log("Insufficient balance!");
+//     } else if (balance - amount < MIN_BALANCE) {
+//         console.log("Transaction rejected! Minimum balance of ₹1000 must be maintained.");
+//     } else {
+//         balance -= amount;
+//         console.log("₹" + amount + " withdrawn successfully.");
+//         checkBalance();
+//     }
+// }
+
+// // 4. Perform Transaction
+// function performTransaction(type, amount) {
+//     switch (type.toLowerCase()) {
+//         case "deposit":
+//             depositMoney(amount);
+//             break;
+
+//         case "withdraw":
+//             withdrawMoney(amount);
+//             break;
+
+//         case "check":
+//             checkBalance();
+//             break;
+
+//         default:
+//             console.log("Invalid transaction type!");
+//     }
+// }
+
+// // Example Transactions
+// console.log("Initial Balance: ₹" + balance);
+
+// performTransaction("deposit", 5000);
+// performTransaction("withdraw", 3000);
+// performTransaction("withdraw", 11500);
+// performTransaction("check");
+
+
+
+
+document.getElementById("form").addEventListener("submit",function(event){
+   event.preventDefault()
+
+   let name=document.getElementById("name").value
+   let age=document.getElementById("age").value
+   let email=document.getElementById("email").value
+   let department=document.getElementById("depart").value
+
+   document.getElementById("display").innerHTML =("Student Name: "+name)
+   document.getElementById("displayn").innerHTML =("Student Age: "+age)
+   document.getElementById("displaym").innerHTML =("Email: "+email)
+   document.getElementById("displayc").innerHTML =("Department: "+department)
+
+    function details (name,age,email,depart){
+    if(name == ""){
+           document.getElementById("display").innerHTML =("Student Name: error")
+    }else{document.getElementById("display").innerHTML =("Student Name: "+name)}
+    if(age == ""){
+        document.getElementById("displayn").innerHTML =("Student Age: error")
+    }else{document.getElementById("displayn").innerHTML =("Student Age: "+age)}
+    if(email == ""){
+        document.getElementById("displaym").innerHTML =("Email: error")
+    }else{document.getElementById("displaym").innerHTML =("Email: "+email)}
+    if(department == ""){
+        document.getElementById("displayc").innerHTML =("Department: error")
+    }else{document.getElementById("displayc").innerHTML =("Department: "+department)}
+
+
+    
+}
+function det(name,age,email,dep){
+    if(name=name){
+    document.getElementById("display").innerHTML =("Student Name: ")
+}
 }
 
-// 2. Deposit Money
-function depositMoney(amount) {
-    if (amount <= 0) {
-        console.log("Invalid amount! Deposit must be greater than zero.");
-    } else {
-        balance += amount;
-        console.log("₹" + amount + " deposited successfully.");
-        checkBalance();
-    }
-}
 
-// 3. Withdraw Money
-function withdrawMoney(amount) {
-    if (amount <= 0) {
-        console.log("Invalid amount! Withdrawal must be greater than zero.");
-    } else if (amount > balance) {
-        console.log("Insufficient balance!");
-    } else if (balance - amount < MIN_BALANCE) {
-        console.log("Transaction rejected! Minimum balance of ₹1000 must be maintained.");
-    } else {
-        balance -= amount;
-        console.log("₹" + amount + " withdrawn successfully.");
-        checkBalance();
-    }
-}
+details(name,age,email,depart)
 
-// 4. Perform Transaction
-function performTransaction(type, amount) {
-    switch (type.toLowerCase()) {
-        case "deposit":
-            depositMoney(amount);
-            break;
-
-        case "withdraw":
-            withdrawMoney(amount);
-            break;
-
-        case "check":
-            checkBalance();
-            break;
-
-        default:
-            console.log("Invalid transaction type!");
-    }
-}
-
-// Example Transactions
-console.log("Initial Balance: ₹" + balance);
-
-performTransaction("deposit", 5000);
-performTransaction("withdraw", 3000);
-performTransaction("withdraw", 11500);
-performTransaction("check");
+   })
