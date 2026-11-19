@@ -166,29 +166,31 @@ document.getElementById("form").addEventListener("submit",function(event){
    document.getElementById("displaym").innerHTML =("Email: "+email)
    document.getElementById("displayc").innerHTML =("Department: "+department)
 
-    function details (name,age,email,depart){
+    function details(name,age,email,depart){
     if(name == ""){
            document.getElementById("display").innerHTML =("Student Name: error")
-    }else{document.getElementById("display").innerHTML =("Student Name: "+name)}
+    }else
+        {document.getElementById("display").innerHTML =("Student Name: "+name)
+        document.getElementById("displayb").innerHTML =("Success")}
+
     if(age == ""){
         document.getElementById("displayn").innerHTML =("Student Age: error")
-    }else{document.getElementById("displayn").innerHTML =("Student Age: "+age)}
-    if(email == ""){
-        document.getElementById("displaym").innerHTML =("Email: error")
-    }else{document.getElementById("displaym").innerHTML =("Email: "+email)}
-    if(department == ""){
-        document.getElementById("displayc").innerHTML =("Department: error")
-    }else{document.getElementById("displayc").innerHTML =("Department: "+department)}
-
+    }else{document.getElementById("displayn").innerHTML =("Student Age: "+age)
+        document.getElementById("displayf").innerHTML =("Success")}
 
     
-}
-function det(name,age,email,dep){
-    if(name=name){
-    document.getElementById("display").innerHTML =("Student Name: ")
-}
-}
+    if(email == ""){
+        document.getElementById("displaym").innerHTML =("Email: error")
+    }else{document.getElementById("displaym").innerHTML =("Email: "+email)
+        document.getElementById("displayj").innerHTML =("Success")}
 
+    if(department == ""){
+        document.getElementById("displayc").innerHTML =("Department: error")
+    }else{document.getElementById("displayc").innerHTML =("Department: "+department)
+        document.getElementById("displayl").innerHTML =("Success")}
+
+    }
+    
 
 details(name,age,email,depart)
 
